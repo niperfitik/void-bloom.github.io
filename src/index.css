@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Тема — управляется классами .dark и .light на <html> */
+:root {
+  --color-bg: #1a0b2e;
+  --color-bg-secondary: #2d1b4e;
+  --color-text: #f0f0f0;
+  --color-text-secondary: #cfc9d8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glow-pink: #ffb7c5;
+  --glow-blue: #6de0ff;
+}
+
+.light {
+  --color-bg: #fdf0f5;
+  --color-bg-secondary: #ffffff;
+  --color-text: #1a0b2e;
+  --color-text-secondary: #3d2c52;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glow-pink: #e8436e;
+  --glow-blue: #3aa8d8;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s, color 0.4s;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Кастомная анимация рисования пера */
+.animate-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 3s ease-out forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
